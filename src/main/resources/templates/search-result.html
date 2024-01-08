@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,34 +78,20 @@
 </head>
 <body>
 <div class="search-container">
-  <form action="search-results.html" method="GET">
-    <input type="text" id="search-box" name="q" placeholder="Search...">
-    <input type="submit" id="search-btn" value="Search">
+  <form method="get" role="form" th:action="@{/searchResult}">
+    <input type="text" name="searchText" id="search-box" placeholder="Search...">
+    <button type="submit" id="search-btn" value="Search">Search</button>
   </form>
 </div>
 
+<div th:each="triple : ${triples}">
 <div class="results-container">
   <div class="result">
-    <h2><a href="https://www.example.com">Example Result Title</a></h2>
-    <p>Example result snippet. This is a brief description of the search result.</p>
+    <h2 th:text="${triple.subject}"><a href="https://www.example.com"></a></h2>
+    <p th:text="${triple.object}"></p>
     <a href="https://www.example.com">https://www.example.com</a>
   </div>
 </div>
-
-<div class="results-container">
-  <div class="result">
-    <h2><a href="https://www.example.com">Example Result Title</a></h2>
-    <p>Example result snippet. This is a brief description of the search result.</p>
-    <a href="https://www.example.com">https://www.example.com</a>
-  </div>
-</div>
-
-<div class="results-container">
-  <div class="result">
-    <h2><a href="https://www.example.com">Example Result Title</a></h2>
-    <p>Example result snippet. This is a brief description of the search result.</p>
-    <a href="https://www.example.com">https://www.example.com</a>
-  </div>
 </div>
 </body>
 </html>

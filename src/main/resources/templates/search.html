@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,9 +51,9 @@
 <body>
 <div id="search-container">
     <div id="search-title">Search Page</div>
-    <form action="https://www.google.com/search" method="GET">
-        <input type="text" id="search-box" name="q" placeholder="Search...">
-        <input type="submit" id="search-btn" value="Search">
+    <form method="get" role="form" th:action="@{/searchResult}">
+    <input type="text" name="searchText" id="search-box" placeholder="Search...">
+        <button type="submit" id="search-btn" value="Search">Search</button>
     </form>
 </div>
 </body>

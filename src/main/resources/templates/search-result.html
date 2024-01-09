@@ -88,8 +88,8 @@
 <div class="results-container">
   <div class="result">
     <h2 th:text="${triple.subject}"><a href="https://www.example.com"></a></h2>
-    <p th:text="${triple.object}"></p>
-    <a href="https://www.example.com">https://www.example.com</a>
+    <p th:utext="${triple.object}"></p>
+<!--    <p th:utext="${generateLinks}"></p>-->
   </div>
 </div>
 </div>

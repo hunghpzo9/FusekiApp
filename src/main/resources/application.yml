@@ -1,0 +1,2 @@
+fuseki:
+  server: http://localhost:3030/ds/sparql
